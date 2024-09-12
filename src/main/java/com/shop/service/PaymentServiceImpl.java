@@ -33,7 +33,7 @@ public class PaymentServiceImpl implements PaymentService {
     public RequestPayDto findRequestDto(Long id) {
         Order order = orderRepository.findOrderAndPaymentAndMember(id)
                 .orElseThrow(() -> new IllegalArgumentException("주문이 없습니다."));
-        System.out.println(order.getItemName()+"ddddddddddddddddd5555555");
+        System.out.println(order.getItemName());
         return RequestPayDto.builder()
                 .buyerName(order.getMember().getName())
                 .buyerEmail(order.getMember().getEmail())

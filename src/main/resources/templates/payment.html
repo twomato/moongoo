@@ -59,7 +59,7 @@
                             window.location.href = "/";
                         })
                     } else {
-                        alert('결제 실패!');
+                        alert('결제 실패! 메인 화면으로 돌아갑니다');
                         window.location.href = "/";
                     }
                 });
@@ -136,7 +136,91 @@
 
 <body>
 <div th:replace="~{fragments/header::header}" class="header"></div>
-<div class="container" style="margin-top: 150px;">
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: white;
+        margin: 0;
+    }
+
+    .container {
+        max-width: 1000px; /* Increased max-width for the container */
+        margin: 30px auto;
+        margin-top: 100px;
+        padding: 20px;
+        background: #f4f7f8;
+        border-radius: 8px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    .content h2 {
+        color: #333;
+        margin-bottom: 20px;
+        font-size: 28px;
+    }
+
+    .table {
+        width: 100%; /* Ensure table takes up full width of container */
+        table-layout: fixed; /* Make sure table layout is fixed for better control */
+    }
+
+    .table th, .table td {
+        padding: 12px;
+        vertical-align: middle;
+        text-align: left; /* Align text to the left for better readability */
+    }
+
+    .table thead th {
+        background-color: #f1f1f1;
+        color: #333;
+        border-bottom: 2px solid #ddd;
+    }
+
+    .table tbody tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    .order-summary {
+        margin-top: 20px;
+        padding: 15px;
+        background: #f9f9f9;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+    }
+
+    .order-summary h3 {
+        margin-top: 0;
+        font-size: 20px;
+        color: #333;
+    }
+
+    .btn-pay {
+        display: inline-block;
+        padding: 12px 24px;
+        font-size: 16px;
+        font-weight: 600;
+        color: #fff;
+        background-color: #28a745;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        margin-top: 20px;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-pay:hover {
+        background-color: #218838;
+    }
+</style>
+
+
+<div class="container">
     <div class="content">
         <h2>결제 정보</h2>
         <table class="table">
@@ -150,6 +234,12 @@
             <tr>
                 <td>주문 번호</td>
                 <td>[[${requestDto.orderUid}]]</td>
+            </tr>
+            <tr>
+                <td>제품 이미지</td>
+                <td>
+                    <img src="[[${requestDto.itemImageUrl}]]" alt="상품 이미지" style="width: 100px; height: auto;">
+                </td>
             </tr>
             <tr>
                 <td>제품 이름</td>
@@ -176,6 +266,3 @@
         <button class="btn-pay" onclick="requestPay()">결제하기</button>
     </div>
 </div>
-</body>
-
-</html>

@@ -31,7 +31,7 @@ public class ItemController {
     @GetMapping(value = "/admin/item/new")
     public String itemForm(Model model) {
         model.addAttribute("itemFormDto", new ItemFormDto());
-        model.addAttribute("categories", List.of("사료", "간식", "장난감", "목욕용품", "영양제"));
+        model.addAttribute("categories", List.of("펜", "플래너", "다이어리", "스티커", "메모지", "스케치북", "기타"));
 
         return "/item/itemForm";
     }

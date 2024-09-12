@@ -96,10 +96,10 @@ public class MemberController {
         }
         return new ResponseEntity<String>("인증 코드를 올바르게 입력해주세요.",HttpStatus.BAD_REQUEST);
     }
-    @GetMapping("/memberPhoneCheck")
+/*    @GetMapping("/memberPhoneCheck")
     public @ResponseBody String memberPhoneCheck(@RequestParam(value="to") String to) throws CoolsmsException {
 
         return paymentServices.PhoneNumberCheck(to);
-    }
+    }*/
 
 }

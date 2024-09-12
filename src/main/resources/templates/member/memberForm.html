@@ -192,7 +192,7 @@
             <p th:if="${#fields.hasErrors('address')}" th:errors="*{address}" class="fieldError">Incorrect date</p>
         </div>
 
-        <div class="form-group phoneCertifyDiv">
+       <!-- <div class="form-group phoneCertifyDiv">
             <label class="inputTitle">휴대폰 번호</label><br>
             <div class="phoneNum-formgroup">
                 <input th:if="${memberPhone != null}" type="text" name="memberPhone" class="form-control" readonly th:value="${memberPhone}">
@@ -203,7 +203,7 @@
                 <input type="text" name="memberPhoneCertify" class="form-control"  placeholder="인증번호를 입력해주세요.">
                 <input type="button" id="certifyCheck" class="btn btn-primary" value="인증하기">
             </div>
-        </div>
+        </div>-->
 
         <div style="margin-top: 50px; text-align: center">
             <button type="submit" class="btn btn-primary" style="height: 50px;">회원가입</button>

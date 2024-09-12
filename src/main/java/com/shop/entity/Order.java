@@ -43,6 +43,7 @@ public class Order extends BaseEntity{
             orphanRemoval = true, fetch = FetchType.LAZY)
     private List<OrderItem> orderItems = new ArrayList<>();
 
+
     @Builder
     public Order(int price, String itemName, String orderUid, Member member, Payment payment) {
         this.price = price;
